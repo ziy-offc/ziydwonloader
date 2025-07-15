@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Follow untuk Unlock</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    h1 {
+      color: #00ff99;
+    }
+    .btn {
+      display: block;
+      margin: 15px auto;
+      padding: 15px 25px;
+      font-size: 16px;
+      background: #222;
+      color: #fff;
+      border: 2px solid #00ff99;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 80%;
+      max-width: 300px;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #00ff99;
+      color: #000;
+    }
+    .btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    #unlock {
+      background: #ffcc00;
+      color: black;
+      display: none;
+    }
+    .counter {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔒 UNLOCK LINK</h1>
+  <p>Follow semua akun berikut untuk membuka link download</p>
+
+  <button class="btn" onclick="follow(0)">📢 WhatsApp Channel</button>
+  <button class="btn" onclick="follow(1)">🎵 TikTok</button>
+  <button class="btn" onclick="follow(2)">📸 Instagram</button>
+  <button class="btn" onclick="follow(3)">▶️ YouTube</button>
+
+  <div class="counter" id="status">0/4 Followed</div>
+
+  <button class="btn" id="unlock" onclick="unlock()">✅ UNLOCK LINK</button>
+
+  <script>
+    const links = [
+      "https://whatsapp.com/channel/0029VbBAUZi3bbV8ahUhq60C",
+      "https://www.tiktok.com/@zyxxx_192?_r=1&_d=eha35a0fi3a0fg&sec_uid=MS4wLjABAAAA2mq74vryjUXeJD27em_8yJJ2vK-_jnY81BNDFbQHJmnt0S6m370Ce3iuwaAy-QWh",
+      "https://www.instagram.com/zieeex_x?igsh=ZThkN2Q5a3IxcXQy",
+      "https://youtube.com/@ezo-rs7ci?si=1XdlNe2fZ2WLwSSE"
+    ];
+
+    let followed = [false, false, false, false];
+
+    function follow(index) {
+      if (!followed[index]) {
+        window.open(links[index], "_blank");
+        followed[index] = true;
+        updateStatus();
+      }
+    }
+
+    function updateStatus() {
+      const count = followed.filter(v => v).length;
+      document.getElementById("status").textContent = `${count}/4 Followed`;
+
+      if (count === 4) {
+        document.getElementById("unlock").style.display = "block";
+      }
+    }
+
+    function unlock() {
+      window.location.href = "https://www.mediafire.com/file/lrkaesllq60i9tt/sc+base+©ZIY+OFFC.zip/file"; // Ganti link ini
+    }
+  </script>
+
+</body>
+</html>
